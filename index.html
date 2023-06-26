@@ -12,21 +12,21 @@
 
 <body>
   <main>
-    <form>
+    <form id="form">
       <div class="inputs">
         <label for="day">Day</label>
         <input type="text" name="" id="day" placeholder="DD">
-        <div class="alert-message"></div>
+        <div class="alert-message-day alert"></div>
       </div>
       <div class="inputs">
         <label for="month">Month</label>
         <input type="text" name="" id="month" placeholder="MM">
-        <div class="alert-message"></div>
+        <div class="alert-message-month alert"></div>
       </div>
       <div class="inputs">
         <label for="year">Year</label>
         <input type="text" name="" id="year" placeholder="YYYY">
-        <div class="alert-message"></div>
+        <p class="alert-message-year alert"></p>
       </div>
     </form>
     <div class="divider">
@@ -39,12 +39,13 @@
     </div>
     <div class="display">
       <ul>
-        <li><span>--</span>years</li>
-        <li><span>--</span>months</li>
-        <li><span>--</span>days</li>
+        <li><span class="span-year">-- </span>years</li>
+        <li><span class="span-month">-- </span>months</li>
+        <li><span class="span-day">-- </span>days</li>
       </ul>
     </div>
   </main>
 </body>
+<script src="./main.js"> </script>
 
 </html>

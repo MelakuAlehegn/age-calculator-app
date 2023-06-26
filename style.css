@@ -102,6 +102,15 @@ span {
     margin: 0;
 }
 
+.alert {
+    color: var(--light-red);
+    font-size: 10px;
+}
+
+.error {
+    border: 1px solid var(--light-red);
+}
+
 @media screen and (min-width: 425px) {
     main {
         width: 60%;
