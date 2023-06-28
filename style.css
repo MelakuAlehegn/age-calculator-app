@@ -60,6 +60,11 @@ form input {
     outline: none;
 }
 
+form input:focus-visible {
+    border-color: var(--purple);
+    outline: 1px solid var(--purple);
+}
+
 .divider {
     display: flex;
     justify-content: center;
