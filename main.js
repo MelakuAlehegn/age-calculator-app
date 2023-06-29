@@ -17,7 +17,7 @@ function hundleClick() {
         const daylabel = document.querySelector(".label-day");
         let dayInput = document.querySelector("#day");
         dayInput.style.border = "1px solid hsl(0, 100%, 67%)"
-        alertDay.textContent = "day must be valid day"
+        alertDay.textContent = "invalid day"
         daylabel.style.color = "hsl(0, 100%, 67%)"
         setTimeout(() => {
             alertDay.textContent = "";
@@ -31,7 +31,7 @@ function hundleClick() {
         let monthInput = document.querySelector("#month");
         monthInput.style.border = "1px solid hsl(0, 100%, 67%)"
         monthlabel.style.color = "hsl(0, 100%, 67%)"
-        alertMonth.textContent = "month must be valid month"
+        alertMonth.textContent = "invalid month"
         setTimeout(() => {
             alertMonth.textContent = "";
             monthlabel.style.color = "hsl(0, 1%, 44%)"
@@ -43,7 +43,7 @@ function hundleClick() {
         let yearInput = document.querySelector("#day");
         yearInput.style.border = "1px solid hsl(0, 100%, 67%)"
         yearlabel.style.color = "hsl(0, 100%, 67%)"
-        alertYear.textContent = "year must be in the past"
+        alertYear.textContent = "invalid year"
         setTimeout(() => {
             alertYear.textContent = "";
             yearlabel.style.color = "hsl(0, 1%, 44%)"
@@ -52,10 +52,10 @@ function hundleClick() {
         }, 4000);
     }
     else if (isNaN(yearValue)) {
-        let yearInput = document.querySelector("#day");
+        let yearInput = document.querySelector("#year");
         let yearlabel = document.querySelector(".label-year");
         yearInput.style.border = "1px solid hsl(0, 100%, 67%)"
-        alertYear.textContent = "year must be valid"
+        alertYear.textContent = "invalid year"
         yearlabel.style.color = "hsl(0, 100%, 67%)"
         setTimeout(() => {
             alertYear.textContent = "";
