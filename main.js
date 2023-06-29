@@ -14,27 +14,44 @@ function hundleClick() {
     let now = new Date()
     let birthday = new Date(yearValue, monthValue - 1, dayValue)
     if (isNaN(dayValue)) {
+        const daylabel = document.querySelector(".label-day");
+        let dayInput = document.querySelector("#day");
+        dayInput.style.border = "1px solid hsl(0, 100%, 67%)"
         alertDay.textContent = "day must be valid day"
+        daylabel.style.color = "hsl(0, 100%, 67%)"
         setTimeout(() => {
             alertDay.textContent = "";
+            daylabel.style.color = "hsl(0, 1%, 44%)"
+            dayInput.style.border = "1px solid hsl(0, 0%, 86%)"
+
         }, 4000);
     }
     else if (isNaN(monthValue)) {
+        const monthlabel = document.querySelector(".label-month");
+        monthlabel.style.color = "hsl(0, 100%, 67%)"
         alertMonth.textContent = "month must be valid month"
+
         setTimeout(() => {
-            alertDay.textContent = "";
+            alertMonth.textContent = "";
+            monthlabel.style.color = "hsl(0, 1%, 44%)"
         }, 4000);
     }
     else if (yearValue > now.getFullYear()) {
+        let yearlabel = document.querySelector(".label-year");
+        yearlabel.style.color = "hsl(0, 100%, 67%)"
         alertYear.textContent = "year must be in the past"
         setTimeout(() => {
-            alertDay.textContent = "";
+            alertYear.textContent = "";
+            yearlabel.style.color = "hsl(0, 1%, 44%)"
         }, 4000);
     }
     else if (isNaN(yearValue)) {
         alertYear.textContent = "year must be valid"
+        let yearlabel = document.querySelector(".label-year");
+        yearlabel.style.color = "hsl(0, 100%, 67%)"
         setTimeout(() => {
-            alertDay.textContent = "";
+            alertYear.textContent = "";
+            yearlabel.style.color = "hsl(0, 1%, 44%)"
         }, 4000);
     }
     else {
