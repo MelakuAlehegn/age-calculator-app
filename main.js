@@ -13,7 +13,7 @@ function hundleClick() {
     let spanDay = document.querySelector(".span-day");
     let now = new Date()
     let birthday = new Date(yearValue, monthValue - 1, dayValue)
-    if (isNaN(dayValue)) {
+    if (isNaN(dayValue) || dayValue > 30) {
         const daylabel = document.querySelector(".label-day");
         let dayInput = document.querySelector("#day");
         dayInput.style.border = "1px solid hsl(0, 100%, 67%)"
@@ -26,32 +26,41 @@ function hundleClick() {
 
         }, 4000);
     }
-    else if (isNaN(monthValue)) {
+    else if (isNaN(monthValue) || monthValue > 12) {
         const monthlabel = document.querySelector(".label-month");
+        let monthInput = document.querySelector("#month");
+        monthInput.style.border = "1px solid hsl(0, 100%, 67%)"
         monthlabel.style.color = "hsl(0, 100%, 67%)"
         alertMonth.textContent = "month must be valid month"
-
         setTimeout(() => {
             alertMonth.textContent = "";
             monthlabel.style.color = "hsl(0, 1%, 44%)"
+            monthInput.style.border = "1px solid hsl(0, 0%, 86%)"
         }, 4000);
     }
     else if (yearValue > now.getFullYear()) {
         let yearlabel = document.querySelector(".label-year");
+        let yearInput = document.querySelector("#day");
+        yearInput.style.border = "1px solid hsl(0, 100%, 67%)"
         yearlabel.style.color = "hsl(0, 100%, 67%)"
         alertYear.textContent = "year must be in the past"
         setTimeout(() => {
             alertYear.textContent = "";
             yearlabel.style.color = "hsl(0, 1%, 44%)"
+            yearInput.style.border = "1px solid hsl(0, 0%, 86%)"
+
         }, 4000);
     }
     else if (isNaN(yearValue)) {
-        alertYear.textContent = "year must be valid"
+        let yearInput = document.querySelector("#day");
         let yearlabel = document.querySelector(".label-year");
+        yearInput.style.border = "1px solid hsl(0, 100%, 67%)"
+        alertYear.textContent = "year must be valid"
         yearlabel.style.color = "hsl(0, 100%, 67%)"
         setTimeout(() => {
             alertYear.textContent = "";
             yearlabel.style.color = "hsl(0, 1%, 44%)"
+            yearInput.style.border = "1px solid hsl(0, 0%, 86%)"
         }, 4000);
     }
     else {
@@ -66,5 +75,4 @@ function hundleClick() {
         spanMonth.textContent = ageInMonths % 12
         spanYear.textContent = ageInYears
     }
-
 }
